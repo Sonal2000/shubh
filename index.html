@@ -51,7 +51,7 @@
                         <div class="author text-center">
                             <div class="author-img"></div>
                             <h1 class="text-white font-staat font-size-40 text-uppercase py-3">Shubham Prakash</h1>
-                            <h5 class="text-white font-ram font-size-27">I'm <span id="typed"></span></h5>
+                            <h5 class="text-white font-ram font-size-27">I'm a <span id="typing"></span></h5>
                         </div>
                     </div>
                 </section>
@@ -270,5 +270,35 @@
 <script src="./vendor/typed/typed.min.js"></script>
 
 <script src="./index.js"></script>
+    
+<script>
+    var typeString = ['DEVELOPER', 'DESIGNER'];
+         var  i = 0;
+         var count = 0
+         var selectedText = '';
+         var text = '';
+         (function type() {
+           if (count == typeString.length) {
+             count = 0;
+           }
+           selectedText = typeString[count];
+           text = selectedText.slice(0, ++i);
+           document.getElementById('typing').innerHTML = text;
+           if (text.length === selectedText.length) {
+             count++;
+             i = 0;
+           }
+           setTimeout(type, 200);
+         }());
+   
+         function sleep(milliseconds) {
+           var start = new Date().getTime();
+           for (var i = 0; i < 1e7; i++) {
+             if ((new Date().getTime() - start) > milliseconds){
+               break;
+             }
+           }
+         }
+   </script>
 </body>
 </html>
